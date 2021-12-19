@@ -10,5 +10,8 @@ steps:
 - name: greeting
   image: alpine
   commands:
-  - echo hello
-  - echo world
+  - ${DRONE_BRANCH}
+  - ${DRONE_REPO_BRANCH}
+  - ${DRONE_BRANCH##v}
+  - ${DRONE_REPO_BRANCH##v}
+  - ${DRONE_TARGET_BRANCH}
